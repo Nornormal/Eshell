@@ -22,3 +22,26 @@ char *_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
+
+/**
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
+ *
+ * Return: pointer to the duplicated string
+ */
+char *_strdup(const char *str)
+{
+	int len = 0;
+	char *dup;
+
+	if (str == NULL)
+		return (NULL);
+	while (*str++)
+		len++;
+	dup = malloc(sizeof(char) * (len + 1));
+	if (!dup)
+		return (NULL);
+	for (len++; len--;)
+		dup[len] = *--str;
+	return (dup);
+}
