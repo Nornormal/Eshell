@@ -53,6 +53,7 @@ int main(int ac, char **argv)
 		argv[i] = NULL;
 		execmd(argv);
 	}
+	free(argv);
 	free(lineptr_copy);
 	free(lineptr);
 	return (0);
